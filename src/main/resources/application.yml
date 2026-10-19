@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 50MB
+
+image-store:
+  capacity-bytes: ${IMAGE_STORE_CAPACITY_BYTES:52428800}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true
